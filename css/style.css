@@ -1,0 +1,464 @@
+/* --- CSS VARIABLES & RESET --- */
+:root {
+    --primary-color: #2563eb;
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --card-bg: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    transition: var(--transition);
+}
+
+/* SECTION LAYOUT --- */
+section {
+    min-height: 100vh;
+    padding: 80px 5% 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section-title::after {
+    content: '';
+    display:block;
+    width: 50px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.section-desc {
+    color: #666;
+    margin-bottom: 3 rem;
+    position: center;
+    text-align: 600px;
+}
+
+/* --- 1. COVER PAGE --- */
+#home {
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.profile-img {
+    width: 250px;
+    height: 275px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-position {
+    font-size: 1.5rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.typing-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* --- 2. ABOUT ME --- */
+#about .about-content {
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #475569;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* --- 3. EDUCATION|EXPERIENCE --- */
+#education-experience {
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.academic-icon {
+    font-size: 4.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#education-experience h1 {
+    font-size: 3rem;
+    max-width: 800px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    max-width: 600px;
+}
+
+/* --- EDUCATION & EXPERIENCE CARDS SECTION --- */
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.journey-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--primary-color);
+}
+
+.journey-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.card-tag {
+    display: inline-block;
+    background: #ccfbf1;
+    color: #0f766e;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.journey-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.institution {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.journey-card p {
+    color: #475569;
+    font-size: 1rem;
+}
+
+/* --- 4. STRENGTHS PAGE --- */
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .strengths-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .strength-card { grid-column: span 2; }
+    .strength-card:nth-child(4) { grid-column: 2 / span 2; }
+    .strength-card:nth-child(5) { grid-column: 4 / span 2; }
+}
+
+.strength-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.strength-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.strength-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.strength-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- 5. PROJECTS PAGE --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(109, 40, 217, 0.12);
+}
+
+/* Screenshot Container */
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #eaeaea;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover .img-container img {
+    transform: scale(1.06);
+}
+
+/* Card Text Info */
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background: #f3e8ff;
+    color: var(--primary-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* Action Link Button */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    gap: 0.8rem;
+}
+
+/* --- 6. CONTACT PAGE --- */
+.social-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    color: #fff;
+}
+
+.social-icon.facebook:hover { background-color: #1877f2; }
+.social-icon.email:hover { background-color: #ea4335; }
+.social-icon.x-twitter:hover { background-color: #000000; }
+.social-icon.instagram:hover { background-color: #e1306c; }
+
+/* --- RESPONSIVE DESIGN (MOBILE) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--card-bg);
+        width: 100%;
+        text-align: center;
+        padding: 2rem;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        transition: var(--transition);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    #home h1 { font-size: 2.2rem; }
+    .social-container { gap: 1rem; }
+    .social-icon { width: 55px; height: 55px; font-size: 1.5rem; }
+
+    #education-experience h1 { font-size: 2.2rem; }
+    .journey-grid { grid-template-columns: 1fr; }
+
+    .project-grid { grid-template-columns: 1fr; }
+}
