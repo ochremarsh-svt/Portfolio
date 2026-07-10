@@ -28,7 +28,7 @@ header {
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(5px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
@@ -60,7 +60,8 @@ header {
     transition: var(--transition);
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-color);
 }
 
@@ -92,7 +93,7 @@ section {
 
 section-title::after {
     content: '';
-    display:block;
+    display: block;
     width: 50px;
     height: 4px;
     background: var(--primary-color);
@@ -117,7 +118,7 @@ section-title::after {
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid var(--primary-color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     transition: var(--transition);
 }
 
@@ -142,19 +143,21 @@ section-title::after {
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 /* --- 2. ABOUT ME --- */
 #about .about-content {
     max-width: 800px;
-    text-align: center;
+    text-align: justify;
     font-size: 1.2rem;
     color: #475569;
     background: var(--card-bg);
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 /* --- 3. EDUCATION|EXPERIENCE --- */
@@ -171,8 +174,15 @@ section-title::after {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 #education-experience h1 {
@@ -199,7 +209,7 @@ section-title::after {
     background: var(--card-bg);
     padding: 2.5rem;
     border-radius: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -217,7 +227,7 @@ section-title::after {
 
 .journey-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .card-tag {
@@ -269,24 +279,33 @@ section-title::after {
     .strengths-grid {
         grid-template-columns: repeat(6, 1fr);
     }
-    .strength-card { grid-column: span 2; }
-    .strength-card:nth-child(4) { grid-column: 2 / span 2; }
-    .strength-card:nth-child(5) { grid-column: 4 / span 2; }
+
+    .strength-card {
+        grid-column: span 2;
+    }
+
+    .strength-card:nth-child(4) {
+        grid-column: 2 / span 2;
+    }
+
+    .strength-card:nth-child(5) {
+        grid-column: 4 / span 2;
+    }
 }
 
 .strength-card {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    text-align: justify;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
     border-top: 4px solid var(--primary-color);
 }
 
 .strength-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .strength-card i {
@@ -406,7 +425,7 @@ section-title::after {
     color: var(--text-color);
     font-size: 2rem;
     text-decoration: none;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
 }
 
@@ -415,10 +434,21 @@ section-title::after {
     color: #fff;
 }
 
-.social-icon.facebook:hover { background-color: #1877f2; }
-.social-icon.email:hover { background-color: #ea4335; }
-.social-icon.x-twitter:hover { background-color: #000000; }
-.social-icon.instagram:hover { background-color: #e1306c; }
+.social-icon.facebook:hover {
+    background-color: #1877f2;
+}
+
+.social-icon.email:hover {
+    background-color: #ea4335;
+}
+
+.social-icon.x-twitter:hover {
+    background-color: #000000;
+}
+
+.social-icon.instagram:hover {
+    background-color: #e1306c;
+}
 
 /* --- RESPONSIVE DESIGN (MOBILE) --- */
 @media (max-width: 768px) {
@@ -435,7 +465,7 @@ section-title::after {
         width: 100%;
         text-align: center;
         padding: 2rem;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
         transition: var(--transition);
     }
 
@@ -446,19 +476,38 @@ section-title::after {
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
+
     .menu-toggle.active span:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    #home h1 { font-size: 2.2rem; }
-    .social-container { gap: 1rem; }
-    .social-icon { width: 55px; height: 55px; font-size: 1.5rem; }
+    #home h1 {
+        font-size: 2.2rem;
+    }
 
-    #education-experience h1 { font-size: 2.2rem; }
-    .journey-grid { grid-template-columns: 1fr; }
+    .social-container {
+        gap: 1rem;
+    }
 
-    .project-grid { grid-template-columns: 1fr; }
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+    }
+
+    #education-experience h1 {
+        font-size: 2.2rem;
+    }
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
